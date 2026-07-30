@@ -1,64 +1,228 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mein Profil</title>
+<title>[Dein Name] | Profil</title>
 
 <style>
 
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     background:#111827;
     color:white;
 }
 
+
+/* HEADER */
+
 header{
-    background:#2563eb;
-    padding:40px;
+
+    background:linear-gradient(
+        135deg,
+        #dc2626,
+        #7f1d1d
+    );
+
+    padding:50px 20px;
     text-align:center;
+
 }
+
+
+header h1{
+
+    font-size:45px;
+    margin:0;
+
+}
+
+
+header p{
+
+    font-size:18px;
+    opacity:0.9;
+
+}
+
+
+
+/* KARTEN */
 
 section{
+
     max-width:900px;
-    margin:auto;
-    margin-top:25px;
+    margin:25px auto;
+
     background:#1f2937;
+
     padding:25px;
-    border-radius:15px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.3);
+
+    animation:
+    erscheinen 0.7s ease;
+
 }
+
+
+@keyframes erscheinen{
+
+from{
+
+    opacity:0;
+    transform:translateY(20px);
+
+}
+
+to{
+
+    opacity:1;
+    transform:translateY(0);
+
+}
+
+}
+
+
+
+section:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/* ÜBERSCHRIFTEN */
 
 h2{
-    color:#60a5fa;
+
+    color:#f87171;
+
 }
 
-a{
-    color:#38bdf8;
+
+
+/* BUTTONS */
+
+.button{
+
+    display:inline-block;
+
+    background:#dc2626;
+
+    color:white;
+
+    padding:12px 20px;
+
+    margin:8px;
+
+    border-radius:12px;
+
     text-decoration:none;
+
+    transition:0.3s;
+
 }
 
-a:hover{
-    text-decoration:underline;
+
+.button:hover{
+
+    background:#ef4444;
+
 }
 
-ul{
-    padding-left:20px;
+
+
+/* PROJEKTE */
+
+.project{
+
+    background:#111827;
+
+    padding:15px;
+
+    margin-top:15px;
+
+    border-radius:15px;
+
+}
+
+
+
+/* AKTUELL */
+
+.current{
+
+    border-left:5px solid #dc2626;
+
+}
+
+
+
+/* FOOTER */
+
+footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:#9ca3af;
+
+}
+
+
+
+/* HANDY */
+
+@media(max-width:600px){
+
+header h1{
+
+    font-size:35px;
+
+}
+
+
+section{
+
+    margin:15px;
+
+}
+
+
 }
 
 </style>
 
+
 </head>
+
+
 <body>
+
 
 <header>
 
 <h1>[Name]</h1>
 
-<p>[Beschreibung]</p>
+<p>[Kurze Beschreibung über dich]</p>
 
 </header>
+
 
 <section>
 
@@ -70,9 +234,11 @@ ul{
 
 <p><b>Wohnort:</b> [PLZ, Ort, Bundesland]</p>
 
-<p><b>Lieblingsstadt:</b> [Lieblingsstadt]</p>
+<p><b>Lieblingsstadt:</b> [Stadt]</p>
+
 
 </section>
+
 
 <section>
 
@@ -81,58 +247,97 @@ ul{
 <ul>
 
 <li>[Fun Fact 1]</li>
-
 <li>[Fun Fact 2]</li>
-
 <li>[Fun Fact 3]</li>
 
 </ul>
 
 </section>
 
+
 <section>
 
 <h2>📬 Kontakt</h2>
 
-<p>E-Mail:
-<a href="mailto:[E-Mail]">[E-Mail]</a>
-</p>
 
-<p>CodePen:
-<a href="[CodePen-Link]">Öffnen</a>
-</p>
+<a class="button" href="mailto:[E-Mail]">
+📧 E-Mail
+</a>
 
-<p>Reado:
-<a href="[Reado-Link]">Öffnen</a>
-</p>
+
+<a class="button" href="[CodePen-Link]">
+💻 CodePen
+</a>
+
+
+<a class="button" href="[Reado-Link]">
+📖 Reado
+</a>
+
 
 </section>
 
+    
 <section>
 
 <h2>🎮 Hobbys</h2>
 
 <p>
 
-[Hier deine Hobbys eintragen.]
+[Schreibe hier deine Hobbys und Interessen hin.]
 
 </p>
 
 </section>
+
+
 
 <section>
 
 <h2>🚀 Meine Projekte</h2>
 
+
+<div class="project">
+
+<h3>Projekt 1</h3>
+
 <p>
-
-[Hier deine Projekte eintragen.]
-
+[Name und Beschreibung deines Projekts]
 </p>
+
+</div>
+
+
+
+<div class="project">
+
+<h3>Projekt 2</h3>
+
+<p>
+[Name und Beschreibung deines Projekts]
+</p>
+
+</div>
+
+
+
+<div class="project">
+
+<h3>Projekt 3</h3>
+
+<p>
+[Name und Beschreibung deines Projekts]
+</p>
+
+</div>
+
 
 </section>
 
-<section>
+
+
+
+<section class="current">
 
 <h2>🔨 Aktuell</h2>
 
@@ -144,27 +349,67 @@ ul{
 
 </section>
 
+
+
+
 <section>
 
 <h2>❤️ Lieblingssachen</h2>
 
+
 <ul>
 
-<li><b>🎵 Musik:</b> [Musik]</li>
+<li>
+🎵 <b>Lieblingsmusik:</b> [Musik]
+</li>
 
-<li><b>🍕 Essen:</b> [Essen]</li>
 
-<li><b>📚 Buch:</b> [Buch]</li>
+<li>
+🍕 <b>Lieblingsessen:</b> [Essen]
+</li>
 
-<li><b>🎬 Film:</b> [Film]</li>
 
-<li><b>📺 Serie:</b> [Serie]</li>
+<li>
+📚 <b>Lieblingsbuch:</b> [Buch]
+</li>
 
-<li><b>🎨 Farbe:</b> [Farbe]</li>
+
+<li>
+🎬 <b>Lieblingsfilm:</b> [Film]
+</li>
+
+
+<li>
+📺 <b>Lieblingsserie:</b> [Serie]
+</li>
+
+
+<li>
+🎨 <b>Lieblingsfarbe:</b> Rot
+</li>
+
 
 </ul>
 
+
 </section>
 
+
+
+<footer>
+
+<p>
+© 2026 [Dein Name]
+</p>
+
+<p>
+Erstellt mit HTML & CSS auf GitHub Pages
+</p>
+
+</footer>
+
+
+
 </body>
+
 </html>
